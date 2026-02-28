@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>翻番商学院 · 2026年度会员 | AI赋能创业</title>
+    <!-- 衬线字体：Playfair Display / 无衬线：Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0C0C0C;
+            color: #E5E5E5;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* 排版 */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 8vw, 5.2rem);
+            font-weight: 600;
+            line-height: 1.1;
+            color: #FFFFFF;
+        }
+
+        h2 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: #FFFFFF;
+        }
+
+        h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 1px;
+            background: #C5A059;
+            margin: 1rem 0 2rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #FFFFFF;
+        }
+
+        .gold {
+            color: #C5A059;
+        }
+
+        .light-text {
+            color: #A0A0A0;
+            font-size: 1.1rem;
+        }
+
+        /* 分割线 */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(197, 160, 89, 0.2);
+            margin: 3rem 0;
+        }
+
+        /* 按钮 */
+        .btn {
+            display: inline-block;
+            background: transparent;
+            color: #C5A059;
+            border: 1px solid #C5A059;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            border-radius: 0;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background: #C5A059;
+            color: #0C0C0C;
+            border-color: #C5A059;
+        }
+
+        .btn-full {
+            background: #C5A059;
+            color: #0C0C0C;
+            border: none;
+            padding: 1.2rem 3.5rem;
+            font-weight: 500;
+        }
+
+        .btn-full:hover {
+            background: #d4af37;
+            color: #0C0C0C;
+        }
+
+        /* 头部 */
+        .hero {
+            padding: 100px 0 60px;
+            text-align: center;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #C5A059;
+            margin-bottom: 1rem;
+        }
+
+        .hero-small {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: #b0b0b0;
+            margin-top: 0.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* 三大价值卡片 */
+        .layers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .layer {
+            flex: 1 1 250px;
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            padding: 2.5rem 2rem;
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(2px);
+        }
+
+        .layer-num {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            color: #C5A059;
+            opacity: 0.3;
+            margin-bottom: 1rem;
+        }
+
+        .layer-title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        /* 七大模块三列表格样式 */
+        .modules-grid {
+            margin: 2rem 0;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            background: rgba(197, 160, 89, 0.05);
+        }
+
+        .modules-header {
+            display: grid;
+            grid-template-columns: 1fr 2fr 3fr;
+            background: #0C0C0C;
+            border-bottom: 1px solid #C5A059;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: #C5A059;
+            padding: 1.2rem 2rem;
+            text-transform: uppercase;
+        }
+
+        .module-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr 3fr;
+            padding: 2rem;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+            background: #0C0C0C;
+        }
+
+        .module-row:last-child {
+            border-bottom: none;
+        }
+
+        .module-name {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .course-list {
+            list-style: none;
+        }
+
+        .course-list li {
+            font-size: 0.95rem;
+            color: #b0b0b0;
+            margin-bottom: 0.4rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .course-list li::before {
+            content: '—';
+            color: #C5A059;
+            position: absolute;
+            left: 0;
+        }
+
+        .ai-desc {
+            color: #d0d0d0;
+            font-size: 0.95rem;
+        }
+
+        .ai-desc strong {
+            color: #C5A059;
+            font-weight: 400;
+        }
+
+        /* 交付卡片 */
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 2px;
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            margin: 2rem 0;
+        }
+
+        .delivery-item {
+            background: #0C0C0C;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .delivery-item .icon {
+            font-size: 2.5rem;
+            color: #C5A059;
+            margin-bottom: 1rem;
+        }
+
+        .delivery-item h5 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 0.3rem;
+            color: white;
+        }
+
+        .delivery-item p {
+            font-size: 0.85rem;
+            color: #909090;
+        }
+
+        /* 福利列表（五大福利） */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2px;
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            background: #0C0C0C;
+            padding: 2rem;
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .benefit-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #C5A059;
+            opacity: 0.5;
+            line-height: 1;
+        }
+
+        .benefit-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+            color: white;
+        }
+
+        .benefit-text p {
+            color: #909090;
+            font-size: 0.9rem;
+        }
+
+        /* 导师区（无照片） */
+        .mentor {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            padding: 2rem 0;
+            align-items: center;
+        }
+
+        .mentor-info {
+            flex: 1;
+        }
+
+        .mentor-tag {
+            border: 1px solid #C5A059;
+            color: #C5A059;
+            padding: 0.2rem 1rem;
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .mentor-name {
+            font-size: 2.8rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .mentor-desc {
+            color: #b0b0b0;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .mentor-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            color: #C5A059;
+        }
+
+        .stat-label {
+            color: #909090;
+            font-size: 0.8rem;
+        }
+
+        /* 学员见证——六个案例完整显示 */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2px;
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            margin: 3rem 0;
+        }
+
+        .testi-item {
+            background: #0C0C0C;
+            padding: 2rem;
+        }
+
+        .testi-name {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 0.2rem;
+        }
+
+        .testi-role {
+            color: #C5A059;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .testi-text {
+            color: #b0b0b0;
+        }
+
+        .testi-highlight {
+            color: #C5A059;
+            font-weight: 400;
+        }
+
+        /* CTA 无价格 */
+        .cta {
+            text-align: center;
+            padding: 5rem 2rem;
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            margin: 4rem 0;
+        }
+
+        /* 底部文字调亮 */
+        .footer-quote {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #dddddd;
+            letter-spacing: 2px;
+            margin: 2rem 0 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            padding: 2rem 0 4rem;
+            color: #aaaaaa;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .modules-header {
+                grid-template-columns: 1fr 2fr 2fr;
+                font-size: 1rem;
+                padding: 1rem;
+            }
+            .module-row {
+                grid-template-columns: 1fr 2fr 2fr;
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 0 20px;
+            }
+            .modules-header, .module-row {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            .modules-header div:not(:first-child) {
+                display: none;
+            }
+            .module-row {
+                border-bottom: 1px solid rgba(197,160,89,0.2);
+            }
+            .module-name {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="hero-sub">翻番商学院 · 2026年度会员</div>
+            <h1>AI 赋能创业</h1>
+            <div class="hero-small">从0到1 · 从1到10</div>
+            <!-- 价格信息已全部移除 -->
+            <a href="#" class="btn btn-full" style="margin-top: 2rem;">立即预定名额</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- 三大价值 (原价值分层) -->
+        <h2>三大价值</h2>
+        <div class="layers">
+            <div class="layer">
+                <div class="layer-num">Ⅰ</div>
+                <div class="layer-title">创业系统</div>
+                <div class="light-text">七大模块完整方法论，从定位到管理</div>
+            </div>
+            <div class="layer">
+                <div class="layer-num">Ⅱ</div>
+                <div class="layer-title">AI 工具箱</div>
+                <div class="light-text">每个模块配AI落地能力，即学即用</div>
+            </div>
+            <div class="layer">
+                <div class="layer-num">Ⅲ</div>
+                <div class="layer-title">全年陪跑</div>
+                <div class="light-text">12+新课程+社群+直播+助教，同步AI迭代</div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- 七大模块：三列表格 -->
+        <h2>七大模块 · 课程 × AI</h2>
+        <div class="modules-grid">
+            <div class="modules-header">
+                <div>模块</div>
+                <div>课程</div>
+                <div>AI赋能</div>
+            </div>
+
+            <!-- 模块1 -->
+            <div class="module-row">
+                <div class="module-name">战略定位</div>
+                <ul class="course-list">
+                    <li>年入千万创业应知应会</li>
+                    <li>如何找到你的蓝海定位</li>
+                </ul>
+                <div class="ai-desc"><strong>定位智能体</strong> — 对话式AI探索工具，快速找到竞争小、需求大的黄金赛道。</div>
+            </div>
+            <!-- 模块2 -->
+            <div class="module-row">
+                <div class="module-name">商业模式</div>
+                <ul class="course-list">
+                    <li>如何万元级打造高客单产品</li>
+                    <li>如何开发一门好课程</li>
+                </ul>
+                <div class="ai-desc"><strong>产品化三件套+客服智能体</strong> — 10分钟生成大纲+PPT+海报，一键搭建官网/测评，7×24客服。</div>
+            </div>
+            <!-- 模块3 -->
+            <div class="module-row">
+                <div class="module-name">成交系统</div>
+                <ul class="course-list">
+                    <li>如何做好顾问式销售</li>
+                    <li>如何做好小型批量发售</li>
+                </ul>
+                <div class="ai-desc"><strong>销售加速器</strong> — AI话术生成、销售复盘分析、发售文案自动生成。</div>
+            </div>
+            <!-- 模块4 -->
+            <div class="module-row">
+                <div class="module-name">内容流量</div>
+                <ul class="course-list">
+                    <li>爆款文案无限生产课程</li>
+                </ul>
+                <div class="ai-desc"><strong>内容工厂+去出镜视频</strong> — 自动生成公众号/朋友圈/脚本，ElevenLabs声音克隆+AI不出镜视频。</div>
+            </div>
+            <!-- 模块5 -->
+            <div class="module-row">
+                <div class="module-name">内容智能体</div>
+                <ul class="course-list">
+                    <li>如何打造自己的AI知识库</li>
+                    <li>AI内容生产10倍开挂私房课</li>
+                    <li>如何构建自己的知识体系</li>
+                </ul>
+                <div class="ai-desc"><strong>你的AI分身</strong> — 定制风格/观点，AI生成初稿，效率10倍，构建第二大脑。</div>
+            </div>
+            <!-- 模块6 -->
+            <div class="module-row">
+                <div class="module-name">全场景赋能</div>
+                <ul class="course-list">
+                    <li>创业日常业务流程SOP解析</li>
+                    <li>一人公司实战课</li>
+                </ul>
+                <div class="ai-desc"><strong>一人公司全流程</strong> — 用AI完成调研→内容→客服→销售→数据分析，一个人活成队伍。</div>
+            </div>
+            <!-- 模块7 -->
+            <div class="module-row">
+                <div class="module-name">管理SOP</div>
+                <ul class="course-list">
+                    <li>如何打造小团队</li>
+                    <li>如何管理团队</li>
+                    <li>如何做好时间管理</li>
+                    <li>用老板思维创业</li>
+                </ul>
+                <div class="ai-desc"><strong>AI管理系统</strong> — AI生成SOP、团队管理助手、财务助手自动记账/预警。</div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- 交付方式 -->
+        <h2>全年交付 · 持续陪跑</h2>
+        <div class="delivery-grid">
+            <div class="delivery-item"><div class="icon">👥</div><h5>年度社群</h5><p>200+企业家/创业者，AI交流专区</p></div>
+            <div class="delivery-item"><div class="icon">📡</div><h5>月度直播</h5><p>翻番哥答疑+AI实操</p></div>
+            <div class="delivery-item"><div class="icon">📚</div><h5>12次核心课</h5><p>七大模块系统课程</p></div>
+            <div class="delivery-item"><div class="icon">🔄</div><h5>12次AI新课</h5><p>持续更新紧跟技术</p></div>
+            <div class="delivery-item"><div class="icon">🧑‍🏫</div><h5>专属助教</h5><p>一对一指导+作业</p></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- 五大超值福利（原六大，删除价格相关第六条） -->
+        <h2>五大超值福利</h2>
+        <div class="benefits-grid">
+            <div class="benefit-item"><span class="benefit-num">01</span><div class="benefit-text"><h4>1对1深度咨询</h4><p>翻番哥1小时战略体检 · 价值10,000</p></div></div>
+            <div class="benefit-item"><span class="benefit-num">02</span><div class="benefit-text"><h4>清大总裁班录播课</h4><p>AI品牌营销战略 · 价值8,800</p></div></div>
+            <div class="benefit-item"><span class="benefit-num">03</span><div class="benefit-text"><h4>三件套SOP模板</h4><p>销售/私域/产品SOP+AI版 · 价值5,000</p></div></div>
+            <div class="benefit-item"><span class="benefit-num">04</span><div class="benefit-text"><h4>200+精英人脉</h4><p>企业家/创业者圈层</p></div></div>
+            <div class="benefit-item"><span class="benefit-num">05</span><div class="benefit-text"><h4>线下沙龙入场券</h4><p>价值2,980，AI实操工作坊</p></div></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- 导师 无照片 -->
+        <h2>导师 · 翻番哥</h2>
+        <div class="mentor">
+            <div class="mentor-info">
+                <span class="mentor-tag">前华为13年 · 北大光华</span>
+                <div class="mentor-name">翻番哥</div>
+                <div class="mentor-desc">清大EMBA首席AI讲师 · 小鹅通认证教练 · 《拨开成长的迷雾》作者。服务200+企业家/创业者，AI落地实战派。</div>
+                <div class="mentor-stats">
+                    <div class="stat-item">13年<span class="stat-label"> 华为管理</span></div>
+                    <div class="stat-item">200+<span class="stat-label"> 陪跑者</span></div>
+                    <div class="stat-item">AI<span class="stat-label"> 实战导师</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- 学员见证 完整6个案例 -->
+        <h2>他们已用AI跑通业务</h2>
+        <div class="testimonials">
+            <div class="testi-item"><div class="testi-name">小西</div><div class="testi-role">从华为职场到智能家居IP翘楚</div><div class="testi-text">AI内容工厂实现流量倍增</div></div>
+            <div class="testi-item"><div class="testi-name">诗明</div><div class="testi-role">两年变现180万</div><div class="testi-text">AI销售话术+私域发售</div></div>
+            <div class="testi-item"><div class="testi-name">琳琳</div><div class="testi-role">半年变现70万</div><div class="testi-text">AI克隆声音+自动内容</div></div>
+            <div class="testi-item"><div class="testi-name">小琴</div><div class="testi-role">3个月指导，首单成交9800元</div><div class="testi-text">AI测评转化</div></div>
+            <div class="testi-item"><div class="testi-name">石明艳</div><div class="testi-role">6家高端连锁美容院创始人</div><div class="testi-text">AI赋能传统门店升级</div></div>
+            <div class="testi-item"><div class="testi-name">毛飞飞</div><div class="testi-role">获传音、科大讯飞投资，估值6600万</div><div class="testi-text">个人IP链接资本</div></div>
+        </div>
+
+        <!-- CTA 无价格 -->
+        <div class="cta">
+            <h2 style="margin-bottom: 1rem;">锁定年度会员资格</h2>
+            <!-- 价格信息已全部移除 -->
+            <a href="#" class="btn btn-full">立即抢占名额</a>
+        </div>
+
+        <!-- 底部文字调亮 -->
+        <div class="footer-quote">
+            ｜ 用AI重构创业之路，实现认知与财富双重翻番 ｜
+        </div>
+        <div class="footer-copyright">
+            翻番商学院 · 2026年度商业会员 · 让AI为你打工
+        </div>
+    </div>
+</body>
+</html>
